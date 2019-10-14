@@ -15,6 +15,7 @@
   font-weight: bold;
   letter-spacing: var(--mainSpacing);
   text-transform: var(--mainTransition);
+  text-transform: capitalize;
 }
 .text-main {
   color: var(--primaryColor);
@@ -23,4 +24,28 @@ body {
   font-family: "Open Sans", sans-serif !important;
   background: var(--mainGrey) !important;
   color: var(--mainBlack) !important;
+}
+.main-link {
+  text-transform: uppercase;
+  color: var(--mainWhite);
+  background: var(--primaryColor);
+  padding: 0.5rem 1rem;
+  letter-spacing: var(--mainSpacing);
+  display: inline-block;
+  outline: 2px solid var(--primaryColor);
+  outline-offset: 4px;
+  border: none;
+  transition: var(--mainTransition);
+}
+.main-link:hover {
+  color: var(--primaryColor);
+  background: var(--darkGrey);
+  text-decoration: none;
+  outline-color: var(--darkGrey);
+}
+input,
+textarea {
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
 }
