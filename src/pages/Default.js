@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Default() {
   return (
-    <Hero max title="404" title="404" img={defaultBcg}>
+    <Hero max title="404" img={defaultBcg}>
       <h2 className="text-uppercase">page not found</h2>
       <Link to="/" className="main-link" style={{ marginTop: "2rem" }}>
         return home

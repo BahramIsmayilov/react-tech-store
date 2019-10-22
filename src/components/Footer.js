@@ -7,7 +7,7 @@ export default function Footer() {
     <ProductConsumer>
       {value => (
         <FooterWrapper>
-          <div className="container py-3">
+          <div className="container pb-3 pt-4">
             <div className="row">
               <div className="col-md-6">
                 <p className="text-capitalize">

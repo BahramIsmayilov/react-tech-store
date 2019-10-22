@@ -32,6 +32,5 @@ const HeroWrapper = styled.div`
 `;
 
 Hero.defaultProps = {
-  img: mainBcg,
-  max: ""
+  img: mainBcg
 };

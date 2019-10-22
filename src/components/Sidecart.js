@@ -1,15 +1,41 @@
 import React from "react";
 import styled from "styled-components";
 import { ProductConsumer } from "../context";
+import { Link } from "react-router-dom";
 
 export default function Sidecart() {
   return (
     <ProductConsumer>
       {value => {
-        const { cart, cartOpen, closeCart } = value;
+        const { cart, cartOpen, closeCart, cartTotal } = value;
         return (
           <CartWrapper show={cartOpen} onClick={closeCart}>
-            <h1>hello from side cart</h1>
+            <ul className="mt-4 mb-5">
+              {cart.map(item => {
+                return (
+                  <li key={item.id}>
+                    <img
+                      style={{ width: "2.5rem" }}
+                      src={`../${item.image}`}
+                      // src={item.image}
+                      alt="product image"
+                    />
+                    <h6 className="mt-2 text-uppercase">{item.title}</h6>
+                    <p className="main-text text-title">
+                      amount : {item.count}
+                    </p>
+                  </li>
+                );
+              })}
+              <h4 className="text-main text-capitalize mt-2">
+                cart total: ${cartTotal}
+              </h4>
+              <div className="text-center">
+                <Link to="/cart" className="main-link mb-5 mt-4">
+                  cart page
+                </Link>
+              </div>
+            </ul>
           </CartWrapper>
         );
       }}
@@ -24,11 +50,18 @@ const CartWrapper = styled.nav`
   background-color: var(--mainGrey);
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   transition: var(--mainTransition);
   border-left: solid 4px var(--primaryColor);
   transform: ${props => (props.show ? "translateX(0)" : "translateX(100%)")};
   @media (min-width: 576px) {
     width: 20rem;
+  }
+  overflow: scroll;
+  ul {
+    list-style: none;
+  }
+  h6 {
+    margin: 0.2rem !important;
   }
 `;

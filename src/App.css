@@ -44,8 +44,12 @@ body {
   outline-color: var(--darkGrey);
 }
 input,
-textarea {
+textarea,
+.filter-item {
   outline: none;
   box-shadow: none !important;
   border: 1px solid #ccc !important;
+}
+.cart-icon {
+  cursor: pointer;
 }
