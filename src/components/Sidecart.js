@@ -16,8 +16,8 @@ export default function Sidecart() {
                   <li key={item.id}>
                     <img
                       style={{ width: "2.5rem" }}
-                      src={`../${item.image}`}
-                      // src={item.image}
+                      // src={`../${item.image}`}
+                      src={item.image}
                       alt="product image"
                     />
                     <h6 className="mt-2 text-uppercase">{item.title}</h6>
