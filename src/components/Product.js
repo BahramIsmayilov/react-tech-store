@@ -15,8 +15,8 @@ export default function Product({ product }) {
             <div className="card">
               <div className="img-container">
                 <img
-                  src={`../${image}`}
-                  // src={image}
+                  // src={`../${image}`}
+                  src={image}
                   alt="product"
                   className="card-img-top p-5"
                 />
