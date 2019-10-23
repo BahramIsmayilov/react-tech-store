@@ -32,13 +32,14 @@ class ProductProvider extends Component {
   };
 
   componentDidMount() {
-    //from contentful items
+    // from contentful items
     client
       .getEntries({
         content_type: "techStoreProducts"
       })
       .then(response => this.setProducts(response.items))
       .catch(console.error);
+    //from json items
     // this.setProducts(items);
   }
 
