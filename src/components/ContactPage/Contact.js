@@ -9,7 +9,7 @@ export default function Contact() {
           <Title title="contact us" />
           <form
             className="mt-5"
-            action="https://formspree.io/REACT_APP_CONTACT_EMAIL"
+            action={`https://formspree.io/${process.env.REACT_APP_CONTACT_EMAIL}`}
             method="POST"
           >
             <div className="form-group">
