@@ -55,7 +55,6 @@ class ProductProvider extends Component {
     let featuredProducts = storeProducts.filter(item => item.featured === true);
     //get max product
     let maxPrice = Math.max(...storeProducts.map(item => item.price));
-    console.log(maxPrice);
 
     this.setState(
       {

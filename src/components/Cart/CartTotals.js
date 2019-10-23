@@ -1,5 +1,6 @@
 import React from "react";
 import { ProductConsumer } from "../../context";
+import Paypal from "./Paypal";
 
 export default function CartTotals() {
   return (
@@ -7,7 +8,13 @@ export default function CartTotals() {
       <div className="row">
         <ProductConsumer>
           {value => {
-            const { clearCart, cartSubTotal, cartTax, cartTotal } = value;
+            const {
+              clearCart,
+              cartSubTotal,
+              cartTax,
+              cartTotal,
+              history
+            } = value;
             return (
               <div className="col-10 mx-auto my-4 text-title">
                 <button
@@ -18,7 +25,12 @@ export default function CartTotals() {
                 </button>
                 <h3>subtotal : ${cartSubTotal}</h3>
                 <h3>tax : ${cartTax}</h3>
-                <h3>total : ${cartTotal}</h3>
+                <h3 style={{ marginBottom: "2rem" }}>total : ${cartTotal} </h3>
+                <Paypal
+                  history={history}
+                  clearCart={clearCart}
+                  cartTotal={cartTotal}
+                />
               </div>
             );
           }}
